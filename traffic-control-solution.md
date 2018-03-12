@@ -47,8 +47,8 @@ int main(int argc, char *argv[])
     int i,car=0, loop=3;
     sem_t *ns, *ew;
 
-    ns = sem_open("ns", O_CREAT,0666,0);
-    ew = sem_open("ew", O_CREAT, 0666, 1);
+    ns = sem_open("ns", O_CREAT,0666,1);
+    ew = sem_open("ew", O_CREAT, 0666, 0);
     for(i=0;i<loop;i++){
         sem_wait(ew);
         printf("Semaphore: The road from east to west is open\n");
